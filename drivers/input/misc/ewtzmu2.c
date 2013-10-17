@@ -1777,7 +1777,7 @@ struct file *file, unsigned int cmd,
 		if (data == NULL)
 			break;
 		DIF("%s: EWDAE_IOCTL_GET_AKM_DATA = 0x%x\n", __func__, EWDAE_IOCTL_GET_AKM_DATA);
-		//akm_get_akmd_data(report_to_gyro_value);
+		akm_get_akmd_data(report_to_gyro_value);
 		if (copy_to_user(data, report_to_gyro_value, sizeof(report_to_gyro_value))) {
 			E("%s: EWDAE_IOCTL_GET_AKM_DATA,"
 				"copy_to_user fail\n", __func__);
@@ -1788,7 +1788,7 @@ struct file *file, unsigned int cmd,
 		data = (void __user *) arg;
 		if (data == NULL)
 			break;
-		//akm_ready = akm_get_akmd_ready();
+		akm_ready = akm_get_akmd_ready();
 		if (akm_ready == 0)
 			I("%s: EWDAE_IOCTL_GET_AKM_READY,"
 			"akm_ready= 0x%x\n",

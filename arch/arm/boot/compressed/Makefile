@@ -22,6 +22,7 @@ OBJS		+= sdhi-sh7372.o
 endif
 
 AFLAGS_head.o += -DTEXT_OFFSET=$(TEXT_OFFSET)
+
 AFLAGS_head.o += -Wa,-march=armv7-a$(plus_sec)
 AFLAGS_misc.o +=-Wa,-march=armv7-a$(plus_sec)
 AFLAGS_decompress.o += -Wa,-march=armv7-a$(plus_sec)
